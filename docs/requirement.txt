@@ -1,0 +1,40 @@
+To build a plugin that dynamically links model space objects to paper space viewports inside AutoCAD.
+When a user moves a "model space view frame" object, the corresponding paper space viewport should automatically update to center itself based on the new position.
+
+This is part of a larger project focused on automating sheet production workflows for civil engineering projects.
+
+
+Detailed Requirements:
+1. Model Space View Frame Object
+Create a simple rectangular polyline or block in model space.
+This object will represent the target area shown in the paper space viewport.
+Attach a custom identifier or metadata to link it to a paper space viewport.
+
+2. Paper Space Viewport
+Create a corresponding viewport object in a specified layout (paper space).
+Link the viewport to the model space object.
+
+3. Event-Driven Synchronization
+Attach an ObjectARX Reactor to the model space object.
+When the model space object is moved, resized, or modified, automatically update the linked viewport:
+Center the viewport on the new model space object center.
+Optionally adjust viewport width/height if the size of the model space object changes.
+If the user pans inside the unlocked viewport, do not overwrite user panning unless configured.
+
+4. Object Linking
+Implement a reliable link between the model space object and the viewport using:
+Ensure links survive DWG saves and reopen.
+
+5. Cleanup
+Manage reactor lifetimes properly.
+Avoid memory leaks or dangling pointers when objects are erased or drawings are closed.
+
+
+Technical Expectations:
+Development using AutoCAD ObjectARX SDK (latest 2025 SDK preferred)
+C++ expertise
+Familiarity with AutoCAD database management (open, close, upgradeOpen, downgradeOpen)
+Proper use of transactions
+Exception-safe coding
+
+Plugin should be delivered as a .arx file, along with full source code
