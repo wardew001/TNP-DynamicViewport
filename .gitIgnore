@@ -1,0 +1,62 @@
+# Build results
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# AutoCAD specific
+*.bak
+*.ac$ 
+*.log
+*.sv$
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+# If using PackageReference:
+# !packages/**/package.config
+
+# Dotnet-specific
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Visual Studio
+.vs/
+.vscode/
+*.csproj.user
+*.dbmdl
+*.dbproj.schemaview
+*.sdf
+*.cache
+*.psess
+*.vsp
+*.vspx
+*.vspscc
+*.vssscc
+TestResults/
+*.tss
+*.vsix
+
+# Rider
+.idea/
+*.sln.iml
+
+# Backup files
+*~
+*.old
+*.tmp
+*.swp
+
+# Others
+Thumbs.db
+Desktop.ini
